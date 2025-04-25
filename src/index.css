@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@font-face {
+  font-family: "Averta";
+  src: url("font.otf") format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+:root{
+  --primary-blue: #0275D8;
+  --inverse-green: #c3e8d4;
+  --shade: #9FA2B4;
+  background-color: white;
+  --border : solid 1px #E1E6ED;
+  --bg-shade : #E1E6ED;
+  --bg-blue-shade: #EBF8FE;
+}
+
+*,body {
+  font-family: 'Averta','DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

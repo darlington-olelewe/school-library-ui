@@ -1,0 +1,51 @@
+.notification-container {
+    position: fixed;
+    top: 0;
+    left: calc(50% - 285px);
+    right: calc(50% + 280px);
+    z-index: 9999;
+    align-items: center;
+    gap: 10px;
+    width: 570px;
+}
+
+.notification_container{
+    max-width: 570px;
+    height: 62px;
+    padding: 7px 8px;
+    border-radius: 6px;
+    box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.10), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+    margin-bottom: 10px;
+}
+
+.ok{
+    border: solid 1px #BEF2B9;
+    border-left: solid 5px #519E47;
+    color: #163C29;
+    background-color: #F1FEF1;
+
+}
+
+.bad{
+    border: solid 1px #FDED94;
+    border-left: solid 5px #AF5F26;
+    color: #AF5F26;
+    background-color: #FEF6CF;
+}
+
+.notification_title{
+     font-feature-settings: 'liga' off, 'clig' off;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 600;
+     height: 24px;
+     margin-bottom: 2px;
+     display: flex;
+     justify-content: space-between;
+ }
+.notification_sub{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
