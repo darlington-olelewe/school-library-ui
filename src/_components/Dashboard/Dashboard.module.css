@@ -1,0 +1,53 @@
+
+.dashboard{
+    height: 56px;
+    padding: 0 40px;
+    background-color: #1F2126;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.h3{
+    color: white;
+    display: flex;
+    height: 20px;
+    font-size: 15px;
+}
+
+.left_section{
+    display: flex;
+    align-items: center;
+}
+.initials{
+    margin: 0 5px 0 20px;
+    background-color: #EBF8FE;
+    font-weight: 400;
+    line-height: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #18425D;
+    border-radius: 50%;
+}
+
+.name_group{
+    height: 40px;
+    margin-right: 8px;
+
+}
+.hi{
+    padding: 0;
+    margin: 0;
+    color: #C8D2DF;
+    font-size: 16px;
+}
+.email{
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    color: #5F738C;
+}

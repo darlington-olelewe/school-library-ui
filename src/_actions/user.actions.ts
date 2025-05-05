@@ -26,7 +26,7 @@ export const postUserLogin=(payload: LoginPayload, navCallback: ()=>void)=>{
 
 
             })
-            .finally(()=>{
+            .catch(()=>{
                 const notice: NotificationModel = {
                     id: "",
                     title: "Login User",

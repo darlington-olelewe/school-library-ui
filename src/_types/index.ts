@@ -23,3 +23,16 @@ export type LoginPayload = {
     email: string;
     password: string;
 };
+
+export type BooksDetail = {
+    id: number;
+    "title": string;
+    "authors": string;
+    "isbn": string;
+    "review": string;
+    "year": number;
+    "pages": number;
+    "availableBookCount": number;
+    "totalBookCount": number;
+    "difference": number;
+}

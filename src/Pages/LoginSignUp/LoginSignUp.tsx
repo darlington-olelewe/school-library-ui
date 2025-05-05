@@ -1,5 +1,5 @@
 import style from "./style.module.css"
-import React, {useState} from "react";
+import {useState} from "react";
 import {LoginPayload} from "../../_types";
 import {postUserLogin} from "../../_actions/user.actions";
 import {useDispatch} from "react-redux";
@@ -43,7 +43,7 @@ const Login=(props: welcomeProp)=>{
 
         console.log(emailAndPassword)
         const checkNavigate=()=>{
-            navigate("/check")
+            navigate("/welcome-page")
         }
         dispatch(postUserLogin({email:emailAndPassword.email, password:emailAndPassword.password}, checkNavigate))
 

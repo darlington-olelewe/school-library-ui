@@ -1,0 +1,9 @@
+
+.toggle_hidden{
+    display: inline;
+}
+
+.option{
+    display: inline-block;
+    padding: 8px 10px;
+}

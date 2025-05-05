@@ -1,0 +1,15 @@
+.btn {
+  height: 40px;
+  color: white;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  background-color: var(--primary-blue);
+  cursor: pointer;
+  padding: 16px 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

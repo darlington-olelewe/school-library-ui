@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 import {LoginSignUp} from "../Pages";
-import {Check} from "../Pages/Check/Check.tsx";
+import {BooksPage} from "../Pages/Admin/BooksPage/BooksPage.tsx";
 
 
 export const AppRoutes =()=>{
@@ -10,8 +10,11 @@ export const AppRoutes =()=>{
 
         <Routes>
 
+
+
             <Route path="/welcome-page" element={<LoginSignUp/>} />
-            <Route path="/check" element={<Check/>} />
+            <Route path="/admin-books" element={<BooksPage/>} />
+
 
 
         </Routes>
