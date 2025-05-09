@@ -10,7 +10,7 @@ import {
     targetsUnselected,
     targetsSelected,
     campaignsSelected,
-    NavSelected, NavUnselected, Bell, Logo as logo, Down, Back
+    NavSelected, NavUnselected, Bell, Logo as logo, Down, Back, Search, OptionDot
 } from "./assets_string.ts";
 import style from "./assets.module.css"
 import {useNavigate} from "react-router-dom";
@@ -192,4 +192,12 @@ export const Logo = () => {
 
 export const DownArrow = () => {
     return <img src={Down} alt={"down arrow"} />;
+};
+export const SearchIcon = () => {
+    return <img alt={"Search Image"} src={Search} width={24} height={24} />;
+};
+export const Options = () => {
+    return (
+        <img src={OptionDot} alt={"Options available"} className={style.option} />
+    );
 };

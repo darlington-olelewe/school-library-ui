@@ -1,17 +1,27 @@
-import {action} from "../_types";
+import {action, BooksDetail} from "../_types";
 type appState = {
-    books: string[]
+    fetchingBooks: boolean;
+    fetchAllBooks: BooksDetail[];
 }
 
 const initialState = {
-    books: ['lord of the rings', 'hobbit', 'harry potter']
+    fetchingBooks: false,
+    fetchAllBooks: [],
+
 }
 const appReducer = (state: appState = initialState, action:action)=>{
     switch (action.type) {
-        case "ADD_BOOK":{
+        case "FETCH_ALL_BOOKS":{
             return {
                 ...state,
-                books: [...state.books, action.payload]
+                fetchAllBooks: action.payload
+            }
+        }
+
+        case "FETCHING_ALL_BOOKS":{
+            return {
+                ...state,
+                fetchingBooks: action.payload
             }
         }
 

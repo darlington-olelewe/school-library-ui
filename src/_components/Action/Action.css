@@ -1,0 +1,47 @@
+.container {
+
+    width: fit-content; /* Adjust width to content */
+    display: flex;
+    position: relative;
+    /* Align items vertically */
+}
+
+.fit_content {
+    width: fit-content;
+    padding: 8px 6px;
+    min-width: 157px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0px 0px 0px 1px rgba(152, 161, 178, 0.10), 0px 15px 35px -5px rgba(17, 24, 38, 0.15), 0px 5px 15px 0px rgba(0, 0, 0, 0.08);
+
+    position: absolute;
+    top: 0;
+    right: 18px;
+    display: none;
+    z-index: 1000;
+}
+
+.container:hover .fit_content {
+    display: block;
+    z-index: 1000;
+
+}
+
+
+.btn{
+    font-size: 14px;
+    line-height: 20px;
+    color: #353F50;
+    background-color: white;
+    display: block;
+    outline: none;
+    border: none;
+    padding: 4px 10px;
+    margin: 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+.btn:hover{
+    background-color: #EBF8FE;
+}

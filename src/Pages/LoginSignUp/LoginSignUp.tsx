@@ -1,10 +1,9 @@
 import style from "./style.module.css"
 import {useState} from "react";
 import {LoginPayload} from "../../_types";
-import {postUserLogin} from "../../_actions/user.actions";
+import {postUserLogin} from "../../_actions/app.actions.ts";
 import {useDispatch} from "react-redux";
 import {AppDispatch} from "../../_reducers";
-import {useNavigate} from "react-router-dom";
 
 export const LoginSignUp = () => {
 
@@ -37,15 +36,10 @@ const Login=(props: welcomeProp)=>{
     const dispatch = useDispatch<AppDispatch>();
 
     const [emailAndPassword, setEmailAndPassword] = useState<LoginPayload>({email:"", password:""})
-    const navigate = useNavigate()
+
 
     const handleSubmit = () => {
-
-        console.log(emailAndPassword)
-        const checkNavigate=()=>{
-            navigate("/welcome-page")
-        }
-        dispatch(postUserLogin({email:emailAndPassword.email, password:emailAndPassword.password}, checkNavigate))
+        dispatch(postUserLogin({email:emailAndPassword.email, password:emailAndPassword.password}))
 
     }
 

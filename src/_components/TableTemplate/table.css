@@ -1,0 +1,49 @@
+.reach_table {
+    /*margin: 10px auto;*/
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 400px;
+    /*overflow: hidden;*/
+    width: 100%;
+}
+
+
+.reach_table thead tr{
+    background: #F3F5F6;
+    color: #353F50;
+    text-align: left;
+    font-weight: bold;
+    gap: 0;
+    margin: 0;
+}
+
+.reach_table thead tr th{
+    color: #353F50;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 12px 14px;
+    height: 48px;
+}
+
+.reach_table th,
+.reach_table td{
+    padding: 7px 14px;
+}
+
+.reach_table tbody tr{
+    border-bottom: 1px solid #E1E6ED;
+    font-weight: 400;
+    color: #353F50;
+    padding: 8px 14px;
+}
+
+.no_record_found{
+    height: 70px;
+    text-align: center;
+    color: var(--primary-blue);
+    font-weight: bold;
+    font-size: 20px;
+}

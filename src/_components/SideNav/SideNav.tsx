@@ -14,32 +14,32 @@ import {
   TargetNavSelected,
   TargetNavUnSelected,
 } from "../../_assets";
-// import { useSelector } from "react-redux";
-// import { RootState } from "../../_store";
+  import { useSelector } from "react-redux";
+ import { RootState } from "../../_store";
+import {LoggedInState} from "../../_types";
 
 export const SideNav = () => {
-  // const userData = useSelector(
-  //   (state: RootState) => state.userState.currentUser
-  // );
-  //
-  // if (!userData) {
-  //   return "Loading...";
-  // }
+  const user : LoggedInState = useSelector(
+    (state: RootState) => state.userState.loggedInUser
+  );
 
-  // userData?.userType === "ADMIN"
-  const val = true;
-  if (val == true) {
+  if (!user) {
+    return "Loading...";
+  }
+
+
+  if (user.role === "ADMIN") {
     return (
       <nav className={"nav"}>
         <ul className={"ul"}>
           <li>
             <NavLink
-              to="/"
+              to="/admin/books"
               className={({ isActive }) => (isActive ? "li active" : "li")}
             >
               {({ isActive }) => (
                 <>
-                  {isActive ? <NavIconActive /> : <NavIconInActive />} Homepage
+                  {isActive ? <NavIconActive /> : <NavIconInActive />} Books
                 </>
               )}
             </NavLink>
@@ -47,13 +47,13 @@ export const SideNav = () => {
 
           <li>
             <NavLink
-              to="/admin/clients"
+              to="/admin/students"
               className={({ isActive }) => (isActive ? "li active" : "li")}
             >
               {({ isActive }) => (
                 <>
                   {isActive ? <ClientIconActive /> : <ClientIconInActive />}{" "}
-                  Clients
+                  Students
                 </>
               )}
             </NavLink>

@@ -14,6 +14,17 @@ export interface AppUser {
     role: "ADMIN" | "STUDENT";
 }
 
+export interface LoggedInState{
+    "requestId": string,
+    "firstName": string,
+    "lastName": string,
+    "email": string,
+    "password": string,
+    "role": "STUDENT" | "ADMIN",
+    "enabled": boolean,
+};
+
+
 export type action = {
     type: string;
     payload?: any;

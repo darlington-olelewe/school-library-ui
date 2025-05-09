@@ -1,9 +1,14 @@
-import { DownArrow, Logo, NotificationIcon } from "../../_assets";
+import { DownArrow, NotificationIcon } from "../../_assets";
 import style from "./Dashboard.module.css";
+import {useSelector} from "react-redux";
+import {RootState} from "../../_store";
+import {LoggedInState} from "../../_types";
 
 export const Dashboard = () => {
-  const username = "Darlington Olelewe";
-  const email = "darlington.olelewe@interswitchng.com";
+
+
+  const user : LoggedInState = useSelector((state: RootState) => state.userState.loggedInUser);
+
 
   const getInitials = (fullname: string): string => {
     const arr = fullname.split(" ");
@@ -17,14 +22,14 @@ export const Dashboard = () => {
   return (
     <div className={style.dashboard}>
       <h3 className={style.h3}>
-        Interswitch <Logo />
+        Library App
       </h3>
       <div className={style.left_section}>
         <NotificationIcon />
-        <div className={style.initials}>{getInitials(username)}</div>
+        <div className={style.initials}>{getInitials(`${user.firstName} ${user.lastName}`)}</div>
         <div className={style.name_group}>
-          <p className={style.hi}>Hi, {username.split(" ")[0]}</p>
-          <p className={style.email}>{email}</p>
+          <p className={style.hi}>Hi, {user.firstName}</p>
+          <p className={style.email}>{user.email}</p>
         </div>
         <DownArrow />
       </div>

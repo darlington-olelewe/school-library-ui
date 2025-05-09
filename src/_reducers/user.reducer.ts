@@ -1,45 +1,42 @@
-import {AppUser} from "../_types";
+import {LoggedInState} from "../_types";
 import {action} from "../_types";
 
 
 type userState = {
     loggingIn: boolean;
-    loggedInUser: AppUser | null;
-    userType: null | "ADMIN" | "STUDENT"
+    loggedInUser: LoggedInState | null;
 }
 
 const initialState = {
     loggingIn: false,
-    loggedInUser: null,
-    userType: null
+    loggedInUser: null
 }
 const appReducer = (state: userState = initialState, action:action)=>{
     switch (action.type) {
-        case "USER_LOGGING_IN":{
+        case "USER_LOGIN":
+            localStorage.setItem("lib-user", JSON.stringify(action.payload));
             return {
                 ...state,
-                loggingIn: action.payload
+                loggedInUser: action.payload
             }
-        }
-        case "USER_LOGIN":{
-            const user = action.payload as AppUser;
+
+        case "USER_LOGOUT":
+            localStorage.removeItem("lib-user");
             return {
                 ...state,
-                loggedInUser: user,
-                userType: user.role
+                loggedInUser: null
+            }
+
+        default: {
+            const storedUser: userState = JSON.parse(localStorage.getItem("lib-user") ?? "null");
+
+            return {
+                ...state,
+                loggedInUser: storedUser
             }
         }
 
-        case "USER_LOGOUT":{
-            return {
-                ...state,
-                loggedInUser: null,
-                userType: null
-            }
-        }
 
-        default:
-            return state;
     }
 }
 
