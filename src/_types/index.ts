@@ -34,7 +34,15 @@ export type LoginPayload = {
     email: string;
     password: string;
 };
-
+export type UserInfo = {
+    "requestId": string,
+    "firstName": string,
+    "lastName": string,
+    "email": string,
+    "password": string,
+    "role": "STUDENT" | "ADMIN",
+    "enabled": boolean,
+}
 export type BooksDetail = {
     id: number;
     "title": string;

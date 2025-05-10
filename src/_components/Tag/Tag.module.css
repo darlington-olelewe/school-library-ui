@@ -1,0 +1,33 @@
+
+.true{
+    border-radius: 8px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: solid 1px #BEF2B9;
+    background-color: #F1FEF1;
+    color: #36743D;
+    width: fit-content;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+
+}
+
+.false{
+    border-radius: 8px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #FDED94;
+    background-color: #FEF6CF;
+    color: #AF5F26;
+    gap: 10px;
+    width: fit-content;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+}

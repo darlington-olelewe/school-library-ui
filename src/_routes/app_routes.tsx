@@ -1,7 +1,6 @@
 import {Navigate, Route, Routes} from "react-router-dom";
-import {LoginSignUp} from "../Pages";
-import {BooksPage} from "../Pages/Admin/BooksPage/BooksPage.tsx";
-import {AdminRoutes} from "./AuthGuard.tsx";
+import {LoginSignUp, UsersPage,BooksPage} from "../Pages";
+import {AdminRoutes} from "./AuthGuard";
 import {useSelector} from "react-redux";
 import {RootState} from "../_store";
 import {LoggedInState} from "../_types";
@@ -22,6 +21,7 @@ export const AppRoutes =()=>{
 
             <Route element={<AdminRoutes/>}>
                 <Route path="/admin/books" element={<BooksPage/>} />
+                <Route path="/admin/users" element={<UsersPage/>} />
             </Route>
 
         </Routes>

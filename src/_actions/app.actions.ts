@@ -1,4 +1,4 @@
-import {BooksDetail, LoginPayload, NotificationModel} from "../_types";
+import {BooksDetail, LoginPayload, NotificationModel, UserInfo} from "../_types";
 import {AppDispatch} from "../_reducers";
 import {appAxios} from "../_helpers";
 import {addNewNotification} from "./notification.actions.ts";
@@ -57,10 +57,8 @@ export const postUserLogin=(payload: LoginPayload)=>{
 }
 
 export const getAllBookDetails=()=>{
-
     return (dispatch: AppDispatch)=>{
         dispatch({type:"FETCHING_ALL_BOOKS", payload:true})
-
         appAxios
             .get<{data: BooksDetail[]}>("/api/v1/book-management/fetch-all")
             .then((response)=>{
@@ -76,13 +74,34 @@ export const getAllBookDetails=()=>{
                     type: "BAD",
                 };
                 dispatch(addNewNotification(notice));
-
             })
             .finally(()=>{
                 dispatch({type:"FETCHING_ALL_BOOKS", payload:false})
             })
+    }
+}
 
-
-
+export const adminFetchAllUsers=(requesterId: string)=>{
+    return (dispatch: AppDispatch)=>{
+        dispatch({type:"FETCHING_USERS", payload:true})
+        appAxios
+            .get<{data: UserInfo[]}>("/api/v1/user-management/fetch-all-users/"+requesterId)
+            .then((response)=>{
+                if(response.status==200){
+                    dispatch({type:"USERS", payload:response.data.data})
+                }
+            })
+            .catch(()=>{
+                const notice: NotificationModel = {
+                    id: "",
+                    title: "Fetch Users",
+                    sub: "Error Fetching all library users",
+                    type: "BAD",
+                };
+                dispatch(addNewNotification(notice));
+            })
+            .finally(()=>{
+                dispatch({type:"FETCHING_USERS", payload:false})
+            })
     }
 }

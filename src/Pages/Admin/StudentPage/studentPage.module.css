@@ -1,0 +1,37 @@
+.layout{
+    margin: 0 24px 24px 24px;
+    border: solid 1px #E1E6ED;
+    border-radius: 8px;
+}
+
+.section_main{
+    display: grid;
+    grid-template-columns: 1fr 148px;
+    gap: 16px;
+    padding: 20px 24px;
+
+}
+.write{
+    font-size: 16px;
+    color: #5F738C;
+}
+
+.btn{
+    height: 40px;
+    color: white;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    background-color: var(--primary-blue);
+    cursor: pointer;
+}
+
+.section{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    color: #353F50;
+    display: flex;
+    align-items: center;
+}

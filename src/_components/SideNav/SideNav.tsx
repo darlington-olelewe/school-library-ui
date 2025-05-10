@@ -47,7 +47,7 @@ export const SideNav = () => {
 
           <li>
             <NavLink
-              to="/admin/students"
+              to="/admin/users"
               className={({ isActive }) => (isActive ? "li active" : "li")}
             >
               {({ isActive }) => (
